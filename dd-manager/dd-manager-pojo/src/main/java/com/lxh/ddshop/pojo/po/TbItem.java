@@ -49,6 +49,7 @@ public class TbItem {
         this.sellPoint = sellPoint == null ? null : sellPoint.trim();
     }
 
+
     public Long getPrice() {
         return price;
     }
@@ -56,6 +57,7 @@ public class TbItem {
     public void setPrice(Long price) {
         this.price = price;
     }
+
 
     public Integer getNum() {
         return num;
