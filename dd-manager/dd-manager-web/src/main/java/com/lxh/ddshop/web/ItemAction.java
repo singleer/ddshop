@@ -34,19 +34,6 @@ public class ItemAction {
 
     }
 
-    /*@ResponseBody
-    @RequestMapping("/items")
-    public List<TbItem> listItems() {
-        List<TbItem> list = null;
-        try {
-            list = itemService.listItems();
-        } catch (Exception e) {
-            logger.error(e.getMessage(), e);
-            e.printStackTrace();
-        }
-        return list;
-    }*/
-
     @ResponseBody
     @RequestMapping("/items")
     public Result<TbItemCustom> listItem(Page page){
