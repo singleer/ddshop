@@ -2,6 +2,10 @@ package com.lxh.ddshop.common.dto;
 
 import java.util.List;
 
+/**
+ *
+ * @param <T>
+ */
 public class Result<T> {
 
     private int total;
