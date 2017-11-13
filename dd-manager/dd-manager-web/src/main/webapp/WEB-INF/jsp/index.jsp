@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="js/jquery-easyui-1.5/themes/bootstrap/easyui.css">
     <link rel="stylesheet" href="js/jquery-easyui-1.5/themes/icon.css">
     <link rel="stylesheet" href="css/common.css">
+
 </head>
 <body class="easyui-layout">
 <div data-options="region:'north'" style="height:70px;padding-left:10px;">
@@ -49,6 +50,17 @@
 <!-- jquery easyui -->
 <script src="js/jquery-easyui-1.5/jquery.easyui.min.js"></script>
 <script src="js/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+<%--引入日期格式化库--%>
+<script src="js/moment/moment-with-locales.js"></script>
+<script>
+    moment.locale('zh-cn');
+</script>
+
+<!-- 百度富文本编辑器 -->
+<!-- 配置文件 -->
+<script src="js/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script src="js/ueditor/ueditor.all.js"></script>
 
 
 <!-- 自定义脚本 -->

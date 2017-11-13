@@ -7,6 +7,15 @@ import com.lxh.ddshop.pojo.po.TbItem;
  */
 public class TbItemCustom extends TbItem {
     private String catName;
+    private Long priceView;
+
+    public Long getPriceView() {
+        return priceView;
+    }
+
+    public void setPriceView(Long priceView) {
+        this.priceView = priceView;
+    }
 
     public String getCatName() {
         return catName;
