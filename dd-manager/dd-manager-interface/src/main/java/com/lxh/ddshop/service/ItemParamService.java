@@ -2,6 +2,7 @@ package com.lxh.ddshop.service;
 
 import com.lxh.ddshop.common.dto.Page;
 import com.lxh.ddshop.common.dto.Result;
+import com.lxh.ddshop.pojo.po.TbItemParam;
 import com.lxh.ddshop.pojo.vo.TbItemParamCustom;
 
 /**
@@ -9,4 +10,8 @@ import com.lxh.ddshop.pojo.vo.TbItemParamCustom;
  */
 public interface ItemParamService {
     Result<TbItemParamCustom> listItemParamsByPage(Page page);
+
+    int saveItemParams(Long cid, String paramData);
+
+    TbItemParam getItemParamByCid(Long cid);
 }

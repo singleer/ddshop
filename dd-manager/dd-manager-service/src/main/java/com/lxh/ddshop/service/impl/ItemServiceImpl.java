@@ -7,9 +7,11 @@ import com.lxh.ddshop.common.util.IDUtils;
 import com.lxh.ddshop.dao.TbItemCustomMapper;
 import com.lxh.ddshop.dao.TbItemDescMapper;
 import com.lxh.ddshop.dao.TbItemMapper;
+import com.lxh.ddshop.dao.TbItemParamItemMapper;
 import com.lxh.ddshop.pojo.po.TbItem;
 import com.lxh.ddshop.pojo.po.TbItemDesc;
 import com.lxh.ddshop.pojo.po.TbItemExample;
+import com.lxh.ddshop.pojo.po.TbItemParamItem;
 import com.lxh.ddshop.pojo.vo.TbItemCustom;
 import com.lxh.ddshop.pojo.vo.TbItemQuery;
 import com.lxh.ddshop.service.ItemService;
@@ -37,6 +39,8 @@ public class ItemServiceImpl implements ItemService {
     private TbItemCustomMapper itemCustomDao;
     @Autowired
     private TbItemDescMapper itemDescDao;
+    @Autowired
+    private TbItemParamItemMapper itemParamItemDao;
 
     @Override
     public TbItem getById(Long itemId) {
@@ -131,7 +135,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public int saveItem(TbItem tbItem, String content) {
+    public int saveItem(TbItem tbItem, String content, String paramData) {
         int i = 0;
         try{
             long itemId = IDUtils.getItemId();
@@ -149,6 +153,13 @@ public class ItemServiceImpl implements ItemService {
             tbItemDesc.setUpdated(new Date());
             i += itemDescDao.insert(tbItemDesc);
 
+            //新建一个
+            TbItemParamItem tbItemParamItem = new TbItemParamItem();
+            tbItemParamItem.setItemId(itemId);
+            tbItemParamItem.setParamData(paramData);
+            tbItemParamItem.setCreated(new Date());
+            tbItemParamItem.setUpdated(new Date());
+            i+= itemParamItemDao.insert(tbItemParamItem);
         }catch (Exception e){
             logger.error(e.getMessage(),e);
             e.printStackTrace();

@@ -162,10 +162,11 @@
             {field: 'title', title: '商品名称', width: 100, sortable: true},
             {field: 'sellPoint', title: '卖点', width: 200},
             {field: 'catName', title: '商品类别', width: 100},
-            {field: 'price', title: '价格', width: 100, formatter:function (value) {
+            /*{field: 'price', title: '价格', width: 100, formatter:function (value) {
                 var num = value/100;
                 return num.toFixed(2);
-            }},
+            }},*/
+            {field: 'priceView', title: '价格', width: 100},
             {field: 'status', title: '状态', width: 50, formatter: function (value) {
                 switch (value) {
                     case 1:
