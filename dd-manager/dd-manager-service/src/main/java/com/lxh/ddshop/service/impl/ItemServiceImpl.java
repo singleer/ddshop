@@ -137,6 +137,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public int saveItem(TbItem tbItem, String content, String paramData) {
         int i = 0;
+		int a = 1;
         try{
             long itemId = IDUtils.getItemId();
             tbItem.setId(itemId);
